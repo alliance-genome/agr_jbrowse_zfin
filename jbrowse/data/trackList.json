@@ -1,0 +1,150 @@
+{
+   "formatVersion" : 1,
+   "plugins" : [
+      "HideTrackLabels"
+   ],
+   "tracks" : [
+      {
+         "chunkSize" : 80000,
+         "compress" : 1,
+         "key" : "Reference sequence",
+         "label" : "DNA",
+         "storeClass" : "JBrowse/Store/Sequence/StaticChunked",
+         "type" : "SequenceTrack",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/zfin/zebrafish/seq/{refseq_dirpath}/{refseq}-"
+      },
+      {
+         "compress" : 1,
+         "key" : "ZFIN Gene",
+         "label" : "ZFIN Gene",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature"
+         },
+         "glyph" : "JBrowse/View/FeatureGlyph/Box",
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "tracks/ZFIN Gene/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "Transcript",
+         "label" : "Transcript",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "tracks/ZFIN Gene/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "ZFIN Genes with Phenotype",
+         "label" : "ZFIN Genes with Phenotype",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "tracks/ZFIN Genes with Phenotype/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "ZFIN Genes with Antibody Data",
+         "label" : "ZFIN Genes with Antibody Data",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "tracks/ZFIN Genes with Antibody Data/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "ZFIN Genes with Expression",
+         "label" : "ZFIN Genes with Expression",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "tracks/ZFIN Genes with Expression/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "Complete Assembly Clones",
+         "label" : "Complete Assembly Clones",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "tracks/Complete Assembly Clones/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "Additional Transcripts",
+         "label" : "Additional Transcripts",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "tracks/Additional Transcripts/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "Knockdown Reagent",
+         "label" : "Knockdown Reagent",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "tracks/Knockdown Reagent/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "Assembly",
+         "label" : "Assembly",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "tracks/Assembly/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "Zebrafish Mutation Project",
+         "label" : "Zebrafish Mutation Project",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "tracks/Zebrafish Mutation Project/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "ZFIN Features",
+         "label" : "ZFIN Features",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "tracks/ZFIN Features/{refseq}/trackData.jsonz"
+      }
+   ]
+}
