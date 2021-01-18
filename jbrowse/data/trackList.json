@@ -113,7 +113,7 @@
          "onClick"  : {
              "label": "{name} page at ZFIN",
              "action": "newWindow",
-             "url": "function(track,f) {var zdvid = f.get('zdv_id');  return 'http://zfin.org/' + zdvid;}"
+             "url": "function(track,f) {var zdbid = f.get('zdb_id');  return 'http://zfin.org/' + zdbid;}"
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
@@ -144,7 +144,7 @@
          "onClick"  : {
              "label": "{name} page at ZFIN",
              "action": "newWindow",
-             "url": "function(track,f) {var zdvid = f.get('zdv_id');  return 'http://zfin.org/' + zdvid;}"
+             "url": "function(track,f) {var zdbid = f.get('zdb_id');  return 'http://zfin.org/' + zdbid;}"
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
@@ -162,7 +162,7 @@
          "onClick"  : {
              "label": "{name} page at ZFIN",
              "action": "newWindow",
-             "url": "function(track,f) {var zdvid = f.get('zdv_id');  return 'http://zfin.org/' + zdvid;}"
+             "url": "function(track,f) {var zdbid = f.get('zdb_id');  return 'http://zfin.org/' + zdbid;}"
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
@@ -179,7 +179,7 @@
          "onClick"  : {
              "label": "{name} page at ZFIN",
              "action": "newWindow",
-             "url": "function(track,f) {var zdvid = f.get('zdv_id');  return 'http://zfin.org/' + zdvid;}"
+             "url": "function(track,f) {var zdbid = f.get('zdb_id');  return 'http://zfin.org/' + zdbid;}"
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
@@ -197,7 +197,7 @@
          "onClick"  : {
              "label": "{name} page at ZFIN",
              "action": "newWindow",
-             "url": "function(track,f) {var zdvid = f.get('zdv_id');  return 'http://zfin.org/' + zdvid;}"
+             "url": "function(track,f) {var zdbid = f.get('zdb_id');  return 'http://zfin.org/' + zdbid;}"
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
@@ -215,7 +215,7 @@
          "onClick"  : {
              "label": "{name} page at ZFIN",
              "action": "newWindow",
-             "url": "function(track,f) {var zdvid = f.get('zdv_id');  return 'http://zfin.org/' + zdvid;}"
+             "url": "function(track,f) {var zdbid = f.get('zdb_id');  return 'http://zfin.org/' + zdbid;}"
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
