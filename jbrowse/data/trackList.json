@@ -215,7 +215,7 @@
          "onClick"  : {
              "label": "{name} page at ZFIN",
              "action": "newWindow",
-             "url": "function(track,f) {var zdbid = f.get('zdb_id');  return 'http://zfin.org/' + zdbid;}"
+             "url": "function(track,f) {var zdbid = f.get('ID');  return 'http://zfin.org/' + zdbid;}"
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
