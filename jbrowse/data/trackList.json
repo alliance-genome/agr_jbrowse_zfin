@@ -23,10 +23,12 @@
          "label" : "ZFIN Gene",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "style" : {
-            "className" : "feature"
+            "className" : "feature",
+            "color" : "#088080"
          },
          "onClick"  : {
              "label": "{name} page at ZFIN",
+             "action": "newWindow",
              "url": "function(track,f) {var geneid = f.get('gene_id');  return 'http://zfin.org/' + geneid;}"
          },
          "glyph" : "JBrowse/View/FeatureGlyph/Box",
@@ -40,7 +42,8 @@
          "label" : "Transcript",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "style" : {
-            "className" : "feature"
+            "className" : "feature",
+            "color" : "#6792ED"
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
@@ -56,6 +59,7 @@
          },
          "onClick"  : {
              "label": "{name} page at ZFIN",
+             "action": "newWindow",
              "url": "function(track,f) {var geneid = f.get('gene_id');  return 'http://zfin.org/' + geneid;}"
          },
          "trackType" : "CanvasFeatures",
@@ -72,6 +76,7 @@
          },
          "onClick"  : {
              "label": "{name} page at ZFIN",
+             "action": "newWindow",
              "url": "function(track,f) {var geneid = f.get('gene_id');  return 'http://zfin.org/' + geneid;}"
          },
          "trackType" : "CanvasFeatures",
@@ -88,6 +93,7 @@
          },
          "onClick"  : {
              "label": "{name} page at ZFIN",
+             "action": "newWindow",
              "url": "function(track,f) {var geneid = f.get('gene_id');  return 'http://zfin.org/' + geneid;}"
          },
          "trackType" : "CanvasFeatures",
@@ -100,10 +106,13 @@
          "label" : "Complete Assembly Clones",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "style" : {
-            "className" : "feature"
+            "className" : "feature",
+            "color" : "white",
+            "borderColor" : "#8CADF1"
          },
          "onClick"  : {
              "label": "{name} page at ZFIN",
+             "action": "newWindow",
              "url": "function(track,f) {var zbdid = f.get('zbd_id');  return 'http://zfin.org/' + zbdid;}"
          },
          "trackType" : "CanvasFeatures",
@@ -116,7 +125,8 @@
          "label" : "Additional Transcripts",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "style" : {
-            "className" : "feature"
+            "className" : "feature",
+            "color" : "#FE0200"
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
@@ -128,10 +138,12 @@
          "label" : "Knockdown Reagent",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "style" : {
-            "className" : "feature"
+            "className" : "feature",
+            "color" : "#3DB471"
          },
          "onClick"  : {
              "label": "{name} page at ZFIN",
+             "action": "newWindow",
              "url": "function(track,f) {var zbdid = f.get('zbd_id');  return 'http://zfin.org/' + zbdid;}"
          },
          "trackType" : "CanvasFeatures",
@@ -144,10 +156,12 @@
          "label" : "Assembly",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "style" : {
-            "className" : "feature"
+            "className" : "feature",
+             "color" : "#6792ED"
          },
          "onClick"  : {
              "label": "{name} page at ZFIN",
+             "action": "newWindow",
              "url": "function(track,f) {var zbdid = f.get('zbd_id');  return 'http://zfin.org/' + zbdid;}"
          },
          "trackType" : "CanvasFeatures",
@@ -164,6 +178,7 @@
          },
          "onClick"  : {
              "label": "{name} page at ZFIN",
+             "action": "newWindow",
              "url": "function(track,f) {var zbdid = f.get('zbd_id');  return 'http://zfin.org/' + zbdid;}"
          },
          "trackType" : "CanvasFeatures",
@@ -176,10 +191,12 @@
          "label" : "ZFIN Features",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "style" : {
-            "className" : "feature"
+            "className" : "feature",
+            "color" : "#800080"
          },
          "onClick"  : {
              "label": "{name} page at ZFIN",
+             "action": "newWindow",
              "url": "function(track,f) {var zbdid = f.get('zbd_id');  return 'http://zfin.org/' + zbdid;}"
          },
          "trackType" : "CanvasFeatures",
@@ -192,10 +209,12 @@
          "label" : "Transgenic Insertion",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "style" : {
-            "className" : "feature"
+            "className" : "feature",
+            "color" : "#7135B3"
          },
          "onClick"  : {
              "label": "{name} page at ZFIN",
+             "action": "newWindow",
              "url": "function(track,f) {var zbdid = f.get('zbd_id');  return 'http://zfin.org/' + zbdid;}"
          },
          "trackType" : "CanvasFeatures",
