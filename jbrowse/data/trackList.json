@@ -174,7 +174,8 @@
          "label" : "Zebrafish Mutation Project",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "style" : {
-            "className" : "feature"
+            "className" : "feature",
+            "color" : "#800080"
          },
          "onClick"  : {
              "label": "{name} page at ZFIN",
