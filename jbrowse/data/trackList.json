@@ -1,5 +1,9 @@
 {
    "formatVersion" : 1,
+   "names" : {
+      "type" : "Hash",
+      "url" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/names/"
+   },
    "plugins" : [
       "HideTrackLabels"
    ],
@@ -24,7 +28,7 @@
          "glyph" : "JBrowse/View/FeatureGlyph/Box",
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "tracks/ZFIN Gene/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN Gene/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -36,7 +40,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "tracks/ZFIN Gene/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN Gene/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -48,7 +52,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "tracks/ZFIN Genes with Phenotype/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN Genes with Phenotype/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -60,7 +64,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "tracks/ZFIN Genes with Antibody Data/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN Genes with Antibody Data/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -72,7 +76,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "tracks/ZFIN Genes with Expression/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN Genes with Expression/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -84,7 +88,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "tracks/Complete Assembly Clones/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/Complete Assembly Clones/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -96,7 +100,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "tracks/Additional Transcripts/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/Additional Transcripts/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -108,7 +112,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "tracks/Knockdown Reagent/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/Knockdown Reagent/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -120,7 +124,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "tracks/Assembly/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/Assembly/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -132,7 +136,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "tracks/Zebrafish Mutation Project/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/Zebrafish Mutation Project/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -144,7 +148,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "tracks/ZFIN Features/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN Features/{refseq}/trackData.jsonz"
       }
    ]
 }
