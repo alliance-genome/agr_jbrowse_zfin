@@ -3,7 +3,11 @@
 </head>
 <body>
 
-<div id="jbrowse_new_div" class="jbrowse-view-iframe" style="width:90%;height:400px;background-color:#fff;resize: vertical;overflow: auto;" onrsize="resizeJBrowse();">Hmm, jbrowse failed to load :-( </div>
+This is the un-resized JBrowse in a div<br/>
+
+
+
+<div id="jbrowse_new_div" class="jbrowse-view-iframe" style="width:90%;height:400px;background-color:#fff;resize: vertical;overflow: auto;" >Hmm, jbrowse failed to load :-( </div>
 
 <button onClick="doStuff()" label="resize">resize</button>
 
@@ -29,7 +33,14 @@
     document.getElementById('jbrowse_new_div').style.height = heightComputed + 'px';
     return heightComputed;
 }
-
 </script>
+
+This is the un-resized JBrowse in a div<br/>
+<div id="jbrowse_unresized_div" class="jbrowse-view-unresized" style="width:90%;height:400px;background-color:#fff;resize: vertical;overflow: auto;" >Hmm, jbrowse failed to load :-( </div>
+
+<script type="text/javascript">
+  document.getElementById("jbrowse_unresized_div").innerHTML='<object id="innerUnresizeJBrowse" type="text/html" style="width:100%;height:400px;overflow: auto;" data="http://dev.wormbase.org:9017/jbrowse/?loc=10%3A17075977..17083477&tracks=Transcript&nav=0&tracklist=0&tracklabels=0&overview=0" ></object>';
+</script>
+
 </body>
 </html>
