@@ -32,6 +32,9 @@ wget http://zfin.org/downloads/E_drerio_constant.gff3
 
 # the GBrowse instance at zfin appears to have no data in the dbsnp track
 
+
+#all of the bin/ ... commands are run from a JBrowse directory which will
+#place the processed data in a "data/" directory.
 bin/flatfile-to-json.pl --gff ../../zfin_genes.gff3 --type gene,lincRNA_gene,lncRNA_gene,pseudogene,J_gene_segment --key "ZFIN Gene" --trackType CanvasFeatures --trackLabel "ZFIN Gene" --compress
 
 bin/flatfile-to-json.pl --gff ../../E_antibody.gff3 --type protein_coding_gene --key "ZFIN Genes with Antibody Data" --trackType CanvasFeatures --trackLabel "ZFIN Genes with Antibody Data" --compress
@@ -59,6 +62,9 @@ bin/flatfile-to-json.pl --gff ../../zfin_mutants.gff3 --type sequence_alteration
 
 bin/generate-names.pl --compress
 
+
+#the upload_to_S3.pl script is in the agr_jbrowse_config repo
+#this command is run in a jbrowse/data directory
 ~/scain/agr_jbrowse_config/scripts/upload_to_S3.pl --bucket agrjbrowse --local . --remote MOD-jbrowses/zfin --skipseq
 
 # s3://agrjbrowse/MOD-jbrowses/zfin/
