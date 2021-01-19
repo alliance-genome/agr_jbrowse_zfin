@@ -1,0 +1,35 @@
+<html>
+<head>
+</head>
+<body>
+
+<div id="jbrowse_new_div" class="jbrowse-view-iframe" style="width:90%;height:400px;background-color:#fff;resize: vertical;overflow: auto;" onrsize="resizeJBrowse();">Hmm, jbrowse failed to load :-( </div>
+
+<button onClick="doStuff()" label="resize">resize</button>
+
+<script type="text/javascript">
+  document.getElementById("jbrowse_new_div").innerHTML='<object id="innerJBrowse" type="text/html" style="width:100%;height:400px;overflow: auto;" data="http://dev.wormbase.org:9017/jbrowse/?loc=10%3A17075977..17083477&tracks=Transcript&nav=0&tracklist=0&tracklabels=0&overview=0" ></object>';
+</script>
+
+<script type="text/javascript">
+  function doStuff() {
+    var heightDefault = 40;
+    var heightComputed = 0;
+    var jbrowseDocument = document.getElementById('innerJBrowse').contentDocument || document.getElementById('innerJBrowse').contentWindow.document;
+    var tracks = jbrowseDocument.getElementsByClassName('track');
+    for (var i=0; i < tracks.length; i++) {
+        var id = tracks[i].id;
+        if (id !== 'gridtrack' && id !== 'overviewtrack_overview_loc_track' && id !== 'static_track') {
+             heightComputed += tracks[i].offsetHeight;
+        }
+    }
+
+    heightComputed = Math.max(heightDefault, heightComputed);
+    alert(heightComputed);
+    document.getElementById('jbrowse_new_div').style.height = heightComputed + 'px';
+    return heightComputed;
+}
+
+</script>
+</body>
+</html>
