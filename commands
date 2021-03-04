@@ -1,3 +1,14 @@
+#To dockerize this, it would be fairly straight forward.
+# We'd create a new docker base image, based on gmod/jbrowse-buildenv
+# but that has installed in it a JBrowse instance  and aws tools to 
+# allow uploading the resulting files to the S3 bucket.
+#
+# Two reasons for preinstalling JBrowse in the base:
+# 1. Building JBrowse dynamically takes a while
+# 2. There is no reason to have a "new" version of JBrowse;
+#    The version I used for WB is several years old; the perl
+#    script and json format is quite stable.
+
 wget http://zfin.org/downloads/E_antibody.gff3
 wget http://zfin.org/downloads/E_phenotype.gff3
 wget http://zfin.org/downloads/zfin_mutants.gff3
