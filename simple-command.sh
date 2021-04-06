@@ -1,5 +1,7 @@
 #!bin/sh
 
+cd /jbrowse
+
 wget http://zfin.org/downloads/E_antibody.gff3
 
 
