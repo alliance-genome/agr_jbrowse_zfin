@@ -7,7 +7,7 @@ wget http://zfin.org/downloads/E_antibody.gff3; bin/flatfile-to-json.pl --gff E_
 
 #the upload_to_S3.pl script is in the agr_jbrowse_config repo
 #this command is run in a jbrowse/data directory
-#~/scain/agr_jbrowse_config/scripts/upload_to_S3.pl --bucket agrjbrowse --local . --remote MOD-jbrowses/zfin --skipseq
+/agr_jbrowse_config/scripts/upload_to_S3.pl --bucket agrjbrowse --local data --remote MOD-jbrowses/zfin --skipseq --awsaccess $1 --awssecret $2
 
 # s3://agrjbrowse/MOD-jbrowses/zfin/
 
