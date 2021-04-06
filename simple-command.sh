@@ -1,4 +1,4 @@
-#!bin/bash
+#!bin/sh
 
 wget http://zfin.org/downloads/E_antibody.gff3
 
