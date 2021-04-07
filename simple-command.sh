@@ -40,6 +40,10 @@ rm zfin_mutants.gff3
 
 #the upload_to_S3.pl script is in the agr_jbrowse_config repo
 #this command is run in a jbrowse directory
+#
+# The $1 and $2 in this command are coming to this script via the 
+# `docker run` command and are the AWS keys.  See the comments in 
+# Dockerfile.processgff for more information.
 /agr_jbrowse_config/scripts/upload_to_S3.pl --bucket agrjbrowse --local data --remote MOD-jbrowses/zfin --skipseq --awsaccess $1 --awssecret $2
 
 # s3://agrjbrowse/MOD-jbrowses/zfin/
