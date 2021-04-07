@@ -1,2 +1,2 @@
 # zfin-jbrowse
-JBrowse configs to replicated GBrowse functionality
+JBrowse configs to replicate GBrowse functionality
