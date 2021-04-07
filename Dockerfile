@@ -15,7 +15,7 @@
 # javascript files are served from here.  All of the data are stored in an AWS
 # S3 bucket.  This separation makes development and production issues easier
 # (in my opinion)
-
+LABEL maintainer="scott@scottcain.net"
 FROM gmod/jbrowse-buildenv:latest as build
 
 # Actually JBrowse code; can bump the release tag and rebuild to get new versions
