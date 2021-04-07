@@ -18,7 +18,7 @@
 LABEL maintainer="scott@scottcain.net"
 FROM gmod/jbrowse-buildenv:latest as build
 
-# Actually JBrowse code; can bump the release tag and rebuild to get new versions
+# Actual JBrowse code; can bump the release tag and rebuild to get new versions
 RUN git clone --single-branch --branch dev https://github.com/GMOD/jbrowse.git
 
 #agr_jbrowse_config contains the configuration files for the various species; they are
