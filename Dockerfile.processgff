@@ -1,0 +1,18 @@
+#Note that for the upload command to work, the AWS access key and the AWS
+# secret key must be args in the docker run command as the arguments in that order
+# (so that they'll be passed to the ENTRYPOINT as first and second arguments
+
+
+
+FROM gmod/jbrowse-gff-base:latest 
+
+RUN git clone --single-branch --branch main https://github.com/scottcain/zfin-jbrowse.git
+RUN git clone --single-branch --branch master https://github.com/alliance-genome/agr_jbrowse_config.git
+
+RUN cp /zfin-jbrowse/simple-command.sh / && \
+    mkdir -p /jbrowse/data/seq && \
+    cp /zfin-jbrowse/jbrowse/data/seq/refSeqs.json /jbrowse/data/seq
+
+
+VOLUME /data
+ENTRYPOINT ["/bin/sh", "/simple-command.sh"]
