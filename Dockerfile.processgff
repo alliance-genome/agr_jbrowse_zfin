@@ -24,9 +24,9 @@
 # that is the sort of thing that ought to be done "by hand").  It also doesn't deal
 # with any other file times like BigWig or VCF.
 
-LABEL maintainer="scott@scottcain.net"
-
 FROM gmod/jbrowse-gff-base:latest 
+
+LABEL maintainer="scott@scottcain.net"
 
 RUN git clone --single-branch --branch main https://github.com/scottcain/zfin-jbrowse.git
 RUN git clone --single-branch --branch master https://github.com/alliance-genome/agr_jbrowse_config.git
