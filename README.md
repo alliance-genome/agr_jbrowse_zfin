@@ -51,5 +51,5 @@ the zfin JBrowse instance is currently pretty simple, there isn't much need to d
 Also note that this image only processes GFF files into NCList json and does
 not deal with processing FASTA data (since it changes relatively infrequently,
 that is the sort of thing that ought to be done "by hand").  It also doesn't deal
-with any other file times like BigWig or VCF.
+with any other file types like BigWig or VCF.
 
