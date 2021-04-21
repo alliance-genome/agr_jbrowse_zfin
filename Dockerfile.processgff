@@ -31,9 +31,9 @@ LABEL maintainer="scott@scottcain.net"
 RUN git clone --single-branch --branch main https://github.com/alliance-genome/agr_jbrowse_zfin.git
 RUN git clone --single-branch --branch master https://github.com/alliance-genome/agr_jbrowse_config.git
 
-RUN cp /zfin-jbrowse/simple-command.sh / && \
+RUN cp /agr_jbrowse_zfin/simple-command.sh / && \
     mkdir -p /jbrowse/data/seq && \
-    cp /zfin-jbrowse/jbrowse/data/seq/refSeqs.json /jbrowse/data/seq
+    cp /agr_jbrowse_zfin/jbrowse/data/seq/refSeqs.json /jbrowse/data/seq
 
 
 VOLUME /data

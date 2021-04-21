@@ -58,6 +58,7 @@ rm zfin_zmp.gff3
 wget http://zfin.org/downloads/zfin_mutants.gff3 2>&1; bin/flatfile-to-json.pl --gff zfin_mutants.gff3 --type sequence_alteration --key "ZFIN Features" --trackType CanvasFeatures --trackLabel "ZFIN Features" --compress 2>&1
 rm zfin_mutants.gff3
 
+echo "Running name indexer..."
 bin/generate-names.pl --compress 2>&1
 
 
