@@ -37,4 +37,4 @@ RUN cp /zfin-jbrowse/simple-command.sh / && \
 
 
 VOLUME /data
-ENTRYPOINT ["/bin/sh", "/simple-command.sh"]
+ENTRYPOINT ["/bin/bash", "/simple-command.sh"]
