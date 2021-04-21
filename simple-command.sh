@@ -63,7 +63,7 @@ bin/generate-names.pl --compress 2>&1
 
 #the upload_to_S3.pl script is in the agr_jbrowse_config repo
 #this command is run in a jbrowse directory
-/agr_jbrowse_config/scripts/upload_to_S3.pl --bucket $AWSBUCKET --local data --remote MOD-jbrowses/zfin --skipseq --awsaccess $AWSACCESS --awssecret $AWSSECRET 2>&1
+/agr_jbrowse_config/scripts/upload_to_S3.pl --bucket $AWSBUCKET --local data --remote test/zfin --skipseq --awsaccess $AWSACCESS --awssecret $AWSSECRET 2>&1
 
 # s3://agrjbrowse/MOD-jbrowses/zfin/
 
