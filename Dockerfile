@@ -15,8 +15,9 @@
 # javascript files are served from here.  All of the data are stored in an AWS
 # S3 bucket.  This separation makes development and production issues easier
 # (in my opinion)
-LABEL maintainer="scott@scottcain.net"
+
 FROM gmod/jbrowse-buildenv:latest as build
+LABEL maintainer="scott@scottcain.net"
 
 # Actual JBrowse code; can bump the release tag and rebuild to get new versions
 RUN git clone --single-branch --branch dev https://github.com/GMOD/jbrowse.git
