@@ -69,7 +69,7 @@ LABELS=(
 
 parallel -j 3 wget -q  http://zfin.org/downloads/{} 2>&1 ::: "${FILES[@]}"
 
-parallel --link -j 3  bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff {} --type {} --trackLabel {} ::: "${FILES[@]}" ::: "${TYPES[@]}" ::: "${LABELS[@]}"
+parallel --link -j 3  bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff {1} --type {2} --trackLabel {3} ::: "${FILES[@]}" ::: "${TYPES[@]}" ::: "${LABELS[@]}"
 
 echo "Running name indexer..."
 bin/generate-names.pl --compress 2>&1
