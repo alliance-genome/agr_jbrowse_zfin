@@ -55,7 +55,7 @@ FF2JSONARGS=(
 
 parallel -j 3 wget http://zfin.org/downloads/{} 2>&1 ::: "${FILES[@]}"
 
-parallel -j 3  bin/flatfile-to-json.pl ::: "${FF2JSONARGS[@]}"
+parallel -j 3  bin/flatfile-to-json.pl {} ::: "${FF2JSONARGS[@]}"
 
 echo "Running name indexer..."
 bin/generate-names.pl --compress 2>&1
