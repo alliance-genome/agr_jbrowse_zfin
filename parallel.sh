@@ -53,7 +53,7 @@ FF2JSONARGS=(
 ' --gff zfin_mutants.gff3 --type sequence_alteration --key "ZFIN Features" --trackType CanvasFeatures --trackLabel "ZFIN Features" --compress 2>&1'
 )
 
-parallel -j 3 wget http://zfin.org/downloads/{} 2>&1 ::: "${FILES[@]}"
+parallel -j 3 wget -q  http://zfin.org/downloads/{} 2>&1 ::: "${FILES[@]}"
 
 parallel -j 3  bin/flatfile-to-json.pl {} ::: "${FF2JSONARGS[@]}"
 
