@@ -40,7 +40,7 @@ FILES=(
 )
 
 FF2JSONARGS=(
-' --gff E_antibody.gff3 --type protein_coding_gene --key "ZFIN Genes with Antibody Data" --trackType CanvasFeatures --trackLabel "ZFIN Genes with Antibody Data" --compress'
+'\ --gff\ E_antibody.gff3\ --type\ protein_coding_gene\ --key\ "ZFIN Genes with Antibody Data"\ --trackType\ CanvasFeatures\ --trackLabel\ "ZFIN Genes with Antibody Data"\ --compress'
 ' --gff E_phenotype.gff3 --type protein_coding_gene,lincRNA_gene,lncRNA_gene --key "ZFIN Genes with Phenotype" --trackType CanvasFeatures --trackLabel "ZFIN Genes with Phenotype" --compress'
 ' --gff E_expression.gff3 --type lincRNA_gene,protein_coding_gene,pseudogene --key "ZFIN Genes with Expression" --trackType CanvasFeatures --trackLabel "ZFIN Genes with Expression" --compress'
 ' --gff zfin_genes.gff3 --type gene,lincRNA_gene,lncRNA_gene,pseudogene,J_gene_segment --key "ZFIN Gene" --trackType CanvasFeatures --trackLabel "ZFIN Gene" --compress'
