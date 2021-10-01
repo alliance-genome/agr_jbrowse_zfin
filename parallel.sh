@@ -39,23 +39,37 @@ FILES=(
 'zfin_mutants.gff3'
 )
 
-FF2JSONARGS=(
-'\ --gff\ E_antibody.gff3\ --type\ protein_coding_gene\ --key\ "ZFIN Genes with Antibody Data"\ --trackType\ CanvasFeatures\ --trackLabel\ "ZFIN Genes with Antibody Data"\ --compress'
-' --gff E_phenotype.gff3 --type protein_coding_gene,lincRNA_gene,lncRNA_gene --key "ZFIN Genes with Phenotype" --trackType CanvasFeatures --trackLabel "ZFIN Genes with Phenotype" --compress'
-' --gff E_expression.gff3 --type lincRNA_gene,protein_coding_gene,pseudogene --key "ZFIN Genes with Expression" --trackType CanvasFeatures --trackLabel "ZFIN Genes with Expression" --compress'
-' --gff zfin_genes.gff3 --type gene,lincRNA_gene,lncRNA_gene,pseudogene,J_gene_segment --key "ZFIN Gene" --trackType CanvasFeatures --trackLabel "ZFIN Gene" --compress'
-' --gff zfin_tginsertion.gff3 --type Transgenic_insertion --key "Transgenic Insertion" --trackType CanvasFeatures --trackLabel "Transgenic Insertion" --compress'
-' --gff E_full_zfin_clone.gff3 --type contig,genomic_clone --key "Complete Assembly Clones" --trackType CanvasFeatures --trackLabel "Complete Assembly Clones" --compress'
-' --gff E_trim_zfin_clone.gff3 --type contig,tiling_path_clone --key "Assembly" --trackType CanvasFeatures --trackLabel "Assembly" --compress'
-'  --gff E_zfin_knockdown_reagents.gff3 --type DNA_binding_site,morpholino_oligo,nuclease_binding_site --key "Knockdown Reagent" --trackType CanvasFeatures --trackLabel "Knockdown Reagent" --compress'
-' --gff additional_transcripts.gff3 --type V_gene_segment,C_gene_segment,D_gene_segment,J_gene_segment,lnc_RNA,miRNA,mRNA,ncRNA,pseudogenic_transcript,rRNA,scRNA,snoRNA,snRNA,tRNA,unconfirmed_transcript  --key "Additional Transcripts" --trackType CanvasFeatures --trackLabel "Additional Transcripts" --compress'
-' --gff zfin_zmp.gff3 --type sequence_alteration --key "Zebrafish Mutation Project" --trackType CanvasFeatures --trackLabel "Zebrafish Mutation Project" --compress'
-' --gff zfin_mutants.gff3 --type sequence_alteration --key "ZFIN Features" --trackType CanvasFeatures --trackLabel "ZFIN Features" --compress1'
+TYPES=(
+'protein_coding_gene'
+'protein_coding_gene,lincRNA_gene,lncRNA_gene'
+'lincRNA_gene,protein_coding_gene,pseudogene'
+'gene,lincRNA_gene,lncRNA_gene,pseudogene,J_gene_segment'
+'Transgenic_insertion'
+'contig,genomic_clone'
+'contig,tiling_path_clone'
+'DNA_binding_site,morpholino_oligo,nuclease_binding_site'
+'V_gene_segment,C_gene_segment,D_gene_segment,J_gene_segment,lnc_RNA,miRNA,mRNA,ncRNA,pseudogenic_transcript,rRNA,scRNA,snoRNA,snRNA,tRNA,unconfirmed_transcript'
+'sequence_alteration'
+'sequence_alteration'
+)
+
+LABELS=(
+'"ZFIN Genes with Antibody Data"'
+'"ZFIN Genes with Phenotype"'
+'"ZFIN Genes with Expression"'
+'"ZFIN Gene"'
+'"Transgenic Insertion"'
+'"Complete Assembly Clones"'
+'"Assembly"'
+'"Knockdown Reagent"'
+'"Additional Transcripts"'
+'"Zebrafish Mutation Project"'
+'"ZFIN Features"'
 )
 
 parallel -j 3 wget -q  http://zfin.org/downloads/{} 2>&1 ::: "${FILES[@]}"
 
-parallel -j 3  bin/flatfile-to-json.pl {} ::: "${FF2JSONARGS[@]}"
+parallel --link -j 3  bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff {} --type {} --trackLabel {} ::: "${FILES[@]}" ::: "${TYPES[@]}" ::: "${LABELS[@]}"
 
 echo "Running name indexer..."
 bin/generate-names.pl --compress 2>&1
