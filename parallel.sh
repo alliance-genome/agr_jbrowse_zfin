@@ -73,7 +73,7 @@ parallel --link -j 3  bin/flatfile-to-json.pl --trackType CanvasFeatures  --comp
 
 #start track uploads while running the name indexer
 for label in "${LABELS[@]}"; do
-    AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp --quiet --recursive --content-encoding gzip --acl public-read "data/tracks/$label" "s3://agrjbrowse/MOD-jbrowses/zfin/tracks/$label" &
+    AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp --quiet --recursive --content-encoding gzip --acl public-read \"data/tracks/$label\" \"s3://agrjbrowse/MOD-jbrowses/zfin/tracks/$label\" &
 done
 
 echo "Running name indexer..."
