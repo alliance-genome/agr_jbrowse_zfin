@@ -35,8 +35,7 @@ FILES=(
 'E_full_zfin_clone.gff3'
 'E_trim_zfin_clone.gff3'
 'E_zfin_knockdown_reagents.gff3'
-'V_gene_segment,C_gene_segment,D_gene_segment,J_gene_segment,lnc_RNA,miRNA,mRNA,ncRNA,pseudogenic_transcript,rRNA,scRNA,snoRNA,snRNA,tRNA,unconfirmed_transcript'
-'sequence_alteration''zfin_zmp.gff3'
+'zfin_zmp.gff3'
 'zfin_mutants.gff3'
 )
 
