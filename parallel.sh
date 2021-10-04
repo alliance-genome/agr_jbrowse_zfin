@@ -54,26 +54,26 @@ TYPES=(
 )
 
 LABELS=(
-'Additional Transcripts'
-'ZFIN Genes with Antibody Data'
-'ZFIN Genes with Phenotype'
-'ZFIN Genes with Expression'
-'ZFIN Gene'
-'Transgenic Insertion'
-'Complete Assembly Clones'
+'Additional_Transcripts'
+'ZFIN_Genes_with_Antibody Data'
+'ZFIN_Genes_with_Phenotype'
+'ZFIN_Genes_with_Expression'
+'ZFIN_Gene'
+'Transgenic_Insertion'
+'Complete_Assembly_Clones'
 'Assembly'
-'Knockdown Reagent'
-'Zebrafish Mutation Project'
-'ZFIN Features'
+'Knockdown_Reagent'
+'Zebrafish_Mutation_Project'
+'ZFIN_Features'
 )
 
 parallel -j 3 wget -q  http://zfin.org/downloads/{} 2>&1 ::: "${FILES[@]}"
 
-parallel --link -j 3  bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff {1} --type {2} --trackLabel \"{3}\" ::: "${FILES[@]}" ::: "${TYPES[@]}" ::: "${LABELS[@]}"
+parallel --link -j 3  bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff {1} --type {2} --trackLabel {3} ::: "${FILES[@]}" ::: "${TYPES[@]}" ::: "${LABELS[@]}"
 
 #start track uploads while running the name indexer
 for label in "${LABELS[@]}"; do
-    AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp --quiet --recursive --content-encoding gzip --acl public-read \"data/tracks/$label\" \"s3://agrjbrowse/MOD-jbrowses/zfin/tracks/$label\" &
+    AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp --quiet --recursive --content-encoding gzip --acl public-read data/tracks/$label s3://agrjbrowse/MOD-jbrowses/zfin/tracks/$label &
 done
 
 echo "Running name indexer..."
