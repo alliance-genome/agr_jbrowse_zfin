@@ -26,6 +26,7 @@ fi
 cd /jbrowse
 
 FILES=(
+'additional_transcripts.gff3'
 'E_antibody.gff3'
 'E_phenotype.gff3'
 'E_expression.gff3'
@@ -34,12 +35,13 @@ FILES=(
 'E_full_zfin_clone.gff3'
 'E_trim_zfin_clone.gff3'
 'E_zfin_knockdown_reagents.gff3'
-'additional_transcripts.gff3'
-'zfin_zmp.gff3'
+'V_gene_segment,C_gene_segment,D_gene_segment,J_gene_segment,lnc_RNA,miRNA,mRNA,ncRNA,pseudogenic_transcript,rRNA,scRNA,snoRNA,snRNA,tRNA,unconfirmed_transcript'
+'sequence_alteration''zfin_zmp.gff3'
 'zfin_mutants.gff3'
 )
 
 TYPES=(
+'V_gene_segment,C_gene_segment,D_gene_segment,J_gene_segment,lnc_RNA,miRNA,mRNA,ncRNA,pseudogenic_transcript,rRNA,scRNA,snoRNA,snRNA,tRNA,unconfirmed_transcript'
 'protein_coding_gene'
 'protein_coding_gene,lincRNA_gene,lncRNA_gene'
 'lincRNA_gene,protein_coding_gene,pseudogene'
@@ -48,12 +50,12 @@ TYPES=(
 'contig,genomic_clone'
 'contig,tiling_path_clone'
 'DNA_binding_site,morpholino_oligo,nuclease_binding_site'
-'V_gene_segment,C_gene_segment,D_gene_segment,J_gene_segment,lnc_RNA,miRNA,mRNA,ncRNA,pseudogenic_transcript,rRNA,scRNA,snoRNA,snRNA,tRNA,unconfirmed_transcript'
 'sequence_alteration'
 'sequence_alteration'
 )
 
 LABELS=(
+'"Additional Transcripts"'
 '"ZFIN Genes with Antibody Data"'
 '"ZFIN Genes with Phenotype"'
 '"ZFIN Genes with Expression"'
@@ -62,7 +64,6 @@ LABELS=(
 '"Complete Assembly Clones"'
 '"Assembly"'
 '"Knockdown Reagent"'
-'"Additional Transcripts"'
 '"Zebrafish Mutation Project"'
 '"ZFIN Features"'
 )
@@ -72,8 +73,10 @@ parallel -j 3 wget -q  http://zfin.org/downloads/{} 2>&1 ::: "${FILES[@]}"
 parallel --link -j 3  bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff {1} --type {2} --trackLabel {3} ::: "${FILES[@]}" ::: "${TYPES[@]}" ::: "${LABELS[@]}"
 
 #start track uploads while running the name indexer
+AWS_ACCESS_KEY_ID=$AWSACCESS
+AWS_SECRET_ACCESS_KEY=$AWSSECRET
 for label in "${LABELS[@]}"; do
-    aws s3 cp --recursive --content-encoding gzip --acl public-read "data/tracks/$label" "s3://agrjbrowse/MOD-jbrowses/zfin/tracks/$label" &
+    aws s3 cp --recursive --content-encoding gzip --acl public-read data/tracks/$label s3://agrjbrowse/MOD-jbrowses/zfin/tracks/$label &
 done
 
 echo "Running name indexer..."
