@@ -55,7 +55,7 @@ TYPES=(
 
 LABELS=(
 'Additional_Transcripts'
-'ZFIN_Genes_with_Antibody Data'
+'ZFIN_Genes_with_Antibody_Data'
 'ZFIN_Genes_with_Phenotype'
 'ZFIN_Genes_with_Expression'
 'ZFIN_Gene'
