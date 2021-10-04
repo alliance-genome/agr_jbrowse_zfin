@@ -54,22 +54,22 @@ TYPES=(
 )
 
 LABELS=(
-'"Additional Transcripts"'
-'"ZFIN Genes with Antibody Data"'
-'"ZFIN Genes with Phenotype"'
-'"ZFIN Genes with Expression"'
-'"ZFIN Gene"'
-'"Transgenic Insertion"'
-'"Complete Assembly Clones"'
-'"Assembly"'
-'"Knockdown Reagent"'
-'"Zebrafish Mutation Project"'
-'"ZFIN Features"'
+'Additional Transcripts'
+'ZFIN Genes with Antibody Data'
+'ZFIN Genes with Phenotype'
+'ZFIN Genes with Expression'
+'ZFIN Gene'
+'Transgenic Insertion'
+'Complete Assembly Clones'
+'Assembly'
+'Knockdown Reagent'
+'Zebrafish Mutation Project'
+'ZFIN Features'
 )
 
 parallel -j 3 wget -q  http://zfin.org/downloads/{} 2>&1 ::: "${FILES[@]}"
 
-parallel --link -j 3  bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff {1} --type {2} --trackLabel {3} ::: "${FILES[@]}" ::: "${TYPES[@]}" ::: "${LABELS[@]}"
+parallel --link -j 3  bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff {1} --type {2} --trackLabel \"{3}\" ::: "${FILES[@]}" ::: "${TYPES[@]}" ::: "${LABELS[@]}"
 
 #start track uploads while running the name indexer
 for label in "${LABELS[@]}"; do
