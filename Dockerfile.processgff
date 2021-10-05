@@ -32,9 +32,11 @@ RUN git clone --single-branch --branch main https://github.com/alliance-genome/a
 RUN git clone --single-branch --branch master https://github.com/alliance-genome/agr_jbrowse_config.git
 
 RUN cp /agr_jbrowse_zfin/simple-command.sh / && \
+    cp /agr_jbrowse_zfin/parallel.sh / && \
     mkdir -p /jbrowse/data/seq && \
     cp /agr_jbrowse_zfin/jbrowse/data/seq/refSeqs.json /jbrowse/data/seq
 
 
 VOLUME /data
-ENTRYPOINT ["/bin/bash", "/simple-command.sh"]
+#ENTRYPOINT ["/bin/bash", "/simple-command.sh"]
+ENTRYPOINT ["/bin/bash", "/parallel.sh"]
