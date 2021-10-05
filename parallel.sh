@@ -67,9 +67,9 @@ LABELS=(
 'ZFIN_Features'
 )
 
-parallel -j 3 wget -q  http://zfin.org/downloads/{} 2>&1 ::: "${FILES[@]}"
+parallel -j "96%" wget -q  http://zfin.org/downloads/{} 2>&1 ::: "${FILES[@]}"
 
-parallel --link -j 3  bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff {1} --type {2} --trackLabel {3} ::: "${FILES[@]}" ::: "${TYPES[@]}" ::: "${LABELS[@]}"
+parallel --link -j "96%"  bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff {1} --type {2} --trackLabel {3} ::: "${FILES[@]}" ::: "${TYPES[@]}" ::: "${LABELS[@]}"
 
 #start track uploads while running the name indexer
 for label in "${LABELS[@]}"; do
