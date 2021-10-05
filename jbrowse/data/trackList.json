@@ -34,7 +34,7 @@
          "glyph" : "JBrowse/View/FeatureGlyph/Box",
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN Gene/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN_Gene/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -47,7 +47,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN Gene/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN_Gene/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -64,7 +64,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN Genes with Phenotype/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN_Genes_with_Phenotype/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -81,7 +81,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN Genes with Antibody Data/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN_Genes_with_Antibody_Data/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -98,7 +98,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN Genes with Expression/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN_Genes_with_Expression/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -117,7 +117,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/Complete Assembly Clones/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/Complete_Assembly_Clones/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -130,7 +130,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/Additional Transcripts/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/Additional_Transcripts/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -148,7 +148,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/Knockdown Reagent/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/Knockdown_Reagent/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -184,7 +184,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/Zebrafish Mutation Project/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/Zebrafish_Mutation_Project/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -202,7 +202,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN Features/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN_Features/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
@@ -220,7 +220,7 @@
          },
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
-         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/Transgenic Insertion/{refseq}/trackData.jsonz"
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/Transgenic_Insertion/{refseq}/trackData.jsonz"
       }
    ]
 }
