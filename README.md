@@ -6,6 +6,10 @@ server container that serves up JBrowse with the ZFIN zebrafish
 genome feature data, and one that processes the ZFIN GFF3 into
 JBrowse NCList json data.
 
+The jbrowse instances that are driven by the Dockerfile here are at
+http://jbrowse_zfin_dev.alliancegenome.org/jbrowse/ (server-dev branch) and 
+http://jbrowse_zfin_prod.alliancegenome.org/jbrowse/ (main branch)
+
 JBrowse server container (Dockerfile)
 =====================================
 
