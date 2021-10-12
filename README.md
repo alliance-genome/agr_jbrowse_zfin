@@ -52,8 +52,8 @@ Dockerfile.processgff runs parallel.sh, which makes use of GNU parallel
 (https://www.gnu.org/software/parallel/parallel_tutorial.html), which is
 provided in the base image at https://hub.docker.com/r/gmod/jbrowse-gff-base.
 It is configured to use "96%" of the available CPUs/cores, though in typical
-execution, it will never get close to that level of utilization since the Ansible-
-spawned machine will have way more cores than is needed for this processing.
+execution, it will never get close to that level of utilization since the 
+Ansible-spawned machine will have way more cores than is needed for this processing.
 
 In GoCD, there are two pipelines associated with this process.  The first is 
 JBrowseSoftwareProcessZfin in the SoftwareBuild group. The pipeline fetches the
