@@ -28,8 +28,50 @@ javascript files are served from here.  All of the data are stored in an AWS
 S3 bucket.  This separation makes development and production issues easier
 (in my opinion)
 
+### Running these servers in GoCD
+
+There are five GoCD pipelines associated with run ZFIN JBrowse server instances:
+
+1. JBrowseZFINDev - watches the server-dev branch to rebuld the container
+2. JBrowseZFINProd - watches the main branch to rebuild the container
+3. JBrowseZFINDevServer - runs the dev container on a server
+4. JBrowseZFINProdServer - runs the prod container on a server
+5. NginxJBrowse - handles proxying requests for various MOD JBrowses
+
 GFF3 Processor container (Dockerfile.processgff)
 ================================================
+
+The original version of this script was developed to run on the command
+line in series. The new version is designed to run in the Alliance GoCD and
+Ansible environment making use of parallel processing. The orignal documentation
+is in the next section.
+
+### GoCD and Ansible
+
+Dockerfile.processgff runs parallel.sh, which makes use of GNU parallel 
+(https://www.gnu.org/software/parallel/parallel_tutorial.html), which is
+provided in the base image at https://hub.docker.com/r/gmod/jbrowse-gff-base.
+It is configured to use "96%" of the available CPUs/cores, though in typical
+execution, it will never get close to that level of utilization since the Ansible-
+spawned machine will have way more cores than is needed for this processing.
+
+In GoCD, there are two pipelines associated with this process.  The first is 
+JBrowseSoftwareProcessZfin in the SoftwareBuild group. The pipeline fetches the
+GitHub repo and builds the container that will do the processing. The other
+pipeline is JBrowseProcessZfin in the ETL group, which spawns a processing 
+machine via Ansible which does the processing and deposits the data in the
+agrjbrowse S3 bucket. This process typically takes less than 10 minutes.
+
+I believe when this goes into production the JBrowseProcessZfin process will
+be run nightly, so the cron option will have to be completed in this
+pipeline's settings. At the moment, this pipeline only executes when manually 
+triggered.
+
+#### Original command line invocation
+
+Note that Dockerfile.processgff has been reworked to use parallel.sh
+instead of simple-command.sh, but reverting should be as simple as commenting
+out that CMD and uncommenting the simple-command line.
 
 Note that for the upload command to work, the AWS access key and the AWS
 secret key must supplied as environment variables called AWS_ACCESS_KEY and
