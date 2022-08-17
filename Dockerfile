@@ -25,7 +25,7 @@ RUN git clone --single-branch --branch dev https://github.com/GMOD/jbrowse.git
 #agr_jbrowse_config contains the configuration files for the various species; they are
 #moved into the right place in the long RUN command below
 #RUN git clone --single-branch --branch release-3.1.1 https://github.com/alliance-genome/agr_jbrowse_config.git
-RUN git clone --single-branch --branch main https://github.com/alliance-genome/agr_jbrowse_zfin.git
+RUN git clone --single-branch --branch server-dev https://github.com/alliance-genome/agr_jbrowse_zfin.git
 
 #agr_jbrowse_plugin contains a simple plugin that puts the AGR logo in the upper left corner of the page
 #RUN git clone --single-branch --branch release-3.2.0 https://github.com/alliance-genome/agr_jbrowse_plugin.git
@@ -42,6 +42,7 @@ RUN mkdir /usr/share/nginx/html/jbrowse
 RUN rm /usr/share/nginx/html/index.html && rm /usr/share/nginx/html/50x.html && cp -r /jbrowse/* /usr/share/nginx/html/jbrowse && \
     cp /jbrowse/.htaccess /usr/share/nginx/html/jbrowse/.htaccess && \
     cp /agr_jbrowse_zfin/jbrowse/example.html /usr/share/nginx/html/jbrowse && \
+    cp /agr_jbrowse_zfin/jbrowse/jbrowse.conf /usr/share/nginx/html/jbrowse && \
     cp -r /agr_jbrowse_zfin/jbrowse/data /usr/share/nginx/html/jbrowse
 
 #getting the cached Alliance favicons to overwrite the J provide by JBrowse
@@ -67,8 +68,8 @@ COPY --from=build /usr/share/nginx/html/jbrowse/data /usr/share/nginx/html/jbrow
 COPY --from=build /usr/share/nginx/html/jbrowse/img /usr/share/nginx/html/jbrowse/img
 COPY --from=build /usr/share/nginx/html/jbrowse/index.html /usr/share/nginx/html/jbrowse/index.html
 COPY --from=build /usr/share/nginx/html/jbrowse/example.html /usr/share/nginx/html/jbrowse/example.html
-COPY --from=build /usr/share/nginx/html/jbrowse/jbrowse_conf.json /usr/share/nginx/html/jbrowse/jbrowse_conf.json
 COPY --from=build /usr/share/nginx/html/jbrowse/jbrowse.conf /usr/share/nginx/html/jbrowse/jbrowse.conf
+COPY --from=build /usr/share/nginx/html/jbrowse/jbrowse_conf.json /usr/share/nginx/html/jbrowse/jbrowse_conf.json
 COPY --from=build /usr/share/nginx/html/jbrowse/LICENSE /usr/share/nginx/html/jbrowse/LICENSE
 COPY --from=build /usr/share/nginx/html/jbrowse/plugins /usr/share/nginx/html/jbrowse/plugins
 COPY --from=build /usr/share/nginx/html/jbrowse/site.webmanifest /usr/share/nginx/html/jbrowse/site.webmanifest
