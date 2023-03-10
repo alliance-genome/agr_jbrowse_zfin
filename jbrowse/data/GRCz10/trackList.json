@@ -7,6 +7,7 @@
    "plugins" : [
       "HideTrackLabels"
    ],
+   "dataset_id":"GRCz10",
    "tracks" : [
       {
          "chunkSize" : 80000,
