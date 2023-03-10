@@ -1,0 +1,226 @@
+{
+   "formatVersion" : 1,
+   "names" : {
+      "type" : "Hash",
+      "url" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/Zv9/names/"
+   },
+   "plugins" : [
+      "HideTrackLabels"
+   ],
+   "tracks" : [
+      {
+         "chunkSize" : 80000,
+         "compress" : 1,
+         "key" : "Reference sequence",
+         "label" : "DNA",
+         "storeClass" : "JBrowse/Store/Sequence/StaticChunked",
+         "type" : "SequenceTrack",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/Zv9/seq/{refseq_dirpath}/{refseq}-"
+      },
+      {
+         "compress" : 1,
+         "key" : "ZFIN Gene",
+         "label" : "ZFIN Gene",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature",
+            "color" : "#088080"
+         },
+         "onClick"  : {
+             "label": "{name} page at ZFIN",
+             "action": "newWindow",
+             "url": "function(track,f) {var geneid = f.get('gene_id');  return 'http://zfin.org/' + geneid;}"
+         },
+         "glyph" : "JBrowse/View/FeatureGlyph/Box",
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/Zv9/tracks/ZFIN_Gene/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "Transcript",
+         "label" : "Transcript",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature",
+            "color" : "#6792ED"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/Zv9/tracks/ZFIN_Gene/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "ZFIN Genes with Phenotype",
+         "label" : "ZFIN Genes with Phenotype",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature"
+         },
+         "onClick"  : {
+             "label": "{name} page at ZFIN",
+             "action": "newWindow",
+             "url": "function(track,f) {var geneid = f.get('gene_id');  return 'http://zfin.org/' + geneid;}"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/Zv9/tracks/ZFIN_Genes_with_Phenotype/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "ZFIN Genes with Antibody Data",
+         "label" : "ZFIN Genes with Antibody Data",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature"
+         },
+         "onClick"  : {
+             "label": "{name} page at ZFIN",
+             "action": "newWindow",
+             "url": "function(track,f) {var geneid = f.get('gene_id');  return 'http://zfin.org/' + geneid;}"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/Zv9/tracks/ZFIN_Genes_with_Antibody_Data/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "ZFIN Genes with Expression",
+         "label" : "ZFIN Genes with Expression",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature"
+         },
+         "onClick"  : {
+             "label": "{name} page at ZFIN",
+             "action": "newWindow",
+             "url": "function(track,f) {var geneid = f.get('gene_id');  return 'http://zfin.org/' + geneid;}"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/Zv9/tracks/ZFIN_Genes_with_Expression/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "Complete Assembly Clones",
+         "label" : "Complete Assembly Clones",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature",
+            "color" : "white",
+            "borderColor" : "#8CADF1"
+         },
+         "onClick"  : {
+             "label": "{name} page at ZFIN",
+             "action": "newWindow",
+             "url": "function(track,f) {var zdbid = f.get('zdb_id');  return 'http://zfin.org/' + zdbid;}"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/Zv9/tracks/Complete_Assembly_Clones/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "Additional Transcripts",
+         "label" : "Additional Transcripts",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature",
+            "color" : "#FE0200"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/Zv9/tracks/Additional_Transcripts/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "Knockdown Reagent",
+         "label" : "Knockdown Reagent",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature",
+            "color" : "#3DB471"
+         },
+         "onClick"  : {
+             "label": "{name} page at ZFIN",
+             "action": "newWindow",
+             "url": "function(track,f) {var zdbid = f.get('zdb_id');  return 'http://zfin.org/' + zdbid;}"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/Zv9/tracks/Knockdown_Reagent/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "Assembly",
+         "label" : "Assembly",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature",
+             "color" : "#6792ED"
+         },
+         "onClick"  : {
+             "label": "{name} page at ZFIN",
+             "action": "newWindow",
+             "url": "function(track,f) {var zdbid = f.get('zdb_id');  return 'http://zfin.org/' + zdbid;}"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/Zv9/tracks/Assembly/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "Zebrafish Mutation Project",
+         "label" : "Zebrafish Mutation Project",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature",
+            "color" : "#800080"
+         },
+         "onClick"  : {
+             "label": "{name} page at ZFIN",
+             "action": "newWindow",
+             "url": "function(track,f) {var zdbid = f.get('zdb_id');  return 'http://zfin.org/' + zdbid;}"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/Zv9/tracks/Zebrafish_Mutation_Project/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "ZFIN Features",
+         "label" : "ZFIN Features",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature",
+            "color" : "#800080"
+         },
+         "onClick"  : {
+             "label": "{name} page at ZFIN",
+             "action": "newWindow",
+             "url": "function(track,f) {var zdbid = f.get('zdb_id');  return 'http://zfin.org/' + zdbid;}"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/Zv9/tracks/ZFIN_Features/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "Transgenic Insertion",
+         "label" : "Transgenic Insertion",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature",
+            "color" : "#7135B3"
+         },
+         "onClick"  : {
+             "label": "{name} page at ZFIN",
+             "action": "newWindow",
+             "url": "function(track,f) {var zdbid = f.get('ID');  return 'http://zfin.org/' + zdbid;}"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/Zv9/tracks/Transgenic_Insertion/{refseq}/trackData.jsonz"
+      }
+   ]
+}
