@@ -222,6 +222,23 @@
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
          "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/Zv9/tracks/Transgenic_Insertion/{refseq}/trackData.jsonz"
+      },
+            {
+         "compress" : 1,
+         "key" : "ZFIN Mutants",
+         "label" : "ZFIN Mutants",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature"
+         },
+         "onClick"  : {
+             "label": "{name} page at ZFIN",
+             "action": "newWindow",
+             "url": "function(track,f) {var zdbid = f.get('ID');  return 'http://zfin.org/' + zdbid;}"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/Zv9/tracks/ZFIN Mutants/{refseq}/trackData.jsonz"
       }
    ]
 }
