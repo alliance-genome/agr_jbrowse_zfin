@@ -1,0 +1,39 @@
+{
+   "formatVersion" : 1,
+   "names" : {
+      "type" : "Hash",
+      "url" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/GRCz10/names/"
+   },
+   "plugins" : [
+      "HideTrackLabels"
+   ],
+   "dataset_id":"GRCz10",
+   "tracks" : [
+      {
+         "chunkSize" : 80000,
+         "compress" : 1,
+         "key" : "Reference sequence",
+         "label" : "DNA",
+         "storeClass" : "JBrowse/Store/Sequence/StaticChunked",
+         "type" : "SequenceTrack",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/GRCz10/seq/{refseq_dirpath}/{refseq}-"
+      },
+      {
+         "compress" : 1,
+         "key" : "ZFIN Mutants",
+         "label" : "ZFIN Mutants",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature"
+         },
+         "onClick"  : {
+             "label": "{name} page at ZFIN",
+             "action": "newWindow",
+             "url": "function(track,f) {var zdbid = f.get('ID');  return 'http://zfin.org/' + zdbid;}"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/GRCz10/tracks/ZFIN Mutants/{refseq}/trackData.jsonz"
+      }
+   ]
+}
