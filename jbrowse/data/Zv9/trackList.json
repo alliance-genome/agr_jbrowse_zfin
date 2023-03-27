@@ -20,6 +20,25 @@
       },
       {
          "compress" : 1,
+         "key" : "ZFIN Gene",
+         "label" : "ZFIN Gene",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature",
+            "color" : "#088080"
+         },
+         "onClick"  : {
+             "label": "{name} page at ZFIN",
+             "action": "newWindow",
+             "url": "function(track,f) {var geneid = f.get('gene_id');  return 'http://zfin.org/' + geneid;}"
+         },
+         "glyph" : "JBrowse/View/FeatureGlyph/Box",
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/Zv9/tracks/ZFIN_Gene/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
          "key" : "ZFIN Mutants",
          "label" : "ZFIN Mutants",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
