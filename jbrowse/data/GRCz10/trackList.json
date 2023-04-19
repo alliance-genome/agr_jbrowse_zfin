@@ -120,6 +120,25 @@
       },
       {
          "compress" : 1,
+         "key" : "Complete Assembly Clones",
+         "label" : "Complete Assembly Clones",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature",
+            "color" : "white",
+            "borderColor" : "#8CADF1"
+         },
+         "onClick"  : {
+             "label": "{name} page at ZFIN",
+             "action": "newWindow",
+             "url": "function(track,f) {var zdbid = f.get('zdb_id');  return 'http://zfin.org/' + zdbid;}"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/GRCz10/tracks/Complete_Assembly_Clones/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
          "key" : "Knockdown Reagent",
          "label" : "Knockdown Reagent",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
@@ -135,6 +154,24 @@
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
          "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/GRCz10/tracks/Knockdown_Reagent/{refseq}/trackData.jsonz"
+      },
+      {
+         "compress" : 1,
+         "key" : "Assembly",
+         "label" : "Assembly",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature",
+             "color" : "#6792ED"
+         },
+         "onClick"  : {
+             "label": "{name} page at ZFIN",
+             "action": "newWindow",
+             "url": "function(track,f) {var zdbid = f.get('zdb_id');  return 'http://zfin.org/' + zdbid;}"
+         },
+         "trackType" : "CanvasFeatures",
+         "type" : "CanvasFeatures",
+         "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/GRCz10/tracks/Assembly/{refseq}/trackData.jsonz"
       },
       {
          "compress" : 1,
