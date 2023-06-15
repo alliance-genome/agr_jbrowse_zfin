@@ -34,7 +34,7 @@ RUN git clone --single-branch --branch master https://github.com/alliance-genome
 RUN cp /agr_jbrowse_zfin/simple-command.sh / && \
     cp /agr_jbrowse_zfin/parallel.sh / && \
     mkdir -p /jbrowse/data/seq && \
-    cp /agr_jbrowse_zfin/jbrowse/data/seq/refSeqs.json /jbrowse/data/seq
+    cp /agr_jbrowse_zfin/jbrowse/data/GRCz11/seq/refSeqs.json /jbrowse/data/seq
 
 
 VOLUME /data
