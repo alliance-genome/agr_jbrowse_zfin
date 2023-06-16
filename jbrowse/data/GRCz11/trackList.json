@@ -46,6 +46,7 @@
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "style" : {
             "className" : "feature",
+            "strandArrow" : true,
             "color" : "#6792ED"
          },
          fmtDetailField_Id : function(name) {return null;},
