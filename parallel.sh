@@ -35,8 +35,8 @@ FILES=(
 'E_full_zfin_clone.gff3'
 'E_trim_zfin_clone.gff3'
 'E_zfin_knockdown_reagents.gff3'
-'zfin_zmp.gff3'
-'zfin_mutants.gff3'
+'zfin_zmp_grcz11.gff3'
+'zfin_mutants_grcz11.gff3'
 )
 
 TYPES=(
