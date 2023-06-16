@@ -140,6 +140,7 @@
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "style" : {
             "className" : "feature",
+            "strandArrow" : false,
             "color" : "#3DB471"
          },
          "onClick"  : {
