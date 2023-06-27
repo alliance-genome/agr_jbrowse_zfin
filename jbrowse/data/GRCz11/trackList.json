@@ -49,8 +49,9 @@
             "strandArrow" : true,
             "color" : "#6792ED"
          },
-         fmtDetailField_Id : function(name) {return null;},
-         fmtDetailField_Curie : function(name) {return null;},
+         "fmtDetailField_Id" : "function(name) {return null;}",
+         "fmtDetailField_Curie" : "function(name) {return null;}",
+         "labelTranscripts" : false,
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
          "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN_Gene/{refseq}/trackData.jsonz"
