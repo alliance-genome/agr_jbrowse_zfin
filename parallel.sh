@@ -1,6 +1,6 @@
 #!bin/bash
 
-set -e
+#set -e
 
 if [ -z "$1" ]
 then
