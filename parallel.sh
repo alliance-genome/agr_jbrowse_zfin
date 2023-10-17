@@ -1,6 +1,6 @@
 #!bin/bash
 
-#set -e
+set -e
 
 if [ -z "$1" ]
 then
@@ -23,7 +23,7 @@ else
     AWSBUCKET=${AWS_S3_BUCKET}
 fi
 
-cd ../AGR-jbrowse/jbrowse/jbrowse/
+cd /jbrowse
 
 FILES=(
 'additional_transcripts.gff3'
