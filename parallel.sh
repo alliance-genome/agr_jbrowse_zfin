@@ -1,6 +1,6 @@
 #!bin/bash
 
-set -e
+#set -e
 
 if [ -z "$1" ]
 then
@@ -23,53 +23,26 @@ else
     AWSBUCKET=${AWS_S3_BUCKET}
 fi
 
-cd /jbrowse
+cd ../AGR-jbrowse/jbrowse/jbrowse/
 
 FILES=(
 'additional_transcripts.gff3'
-'E_antibody.gff3'
-'E_phenotype.gff3'
-'E_expression.gff3'
-'zfin_genes.gff3'
-'zfin_tginsertion.gff3'
-'E_full_zfin_clone.gff3'
-'E_trim_zfin_clone.gff3'
-'E_zfin_knockdown_reagents.gff3'
-'zfin_zmp.gff3'
-'zfin_mutants_grcz11.gff3'
+#'zfin_zmp.gff3'
 )
 
 TYPES=(
 'V_gene_segment,C_gene_segment,D_gene_segment,J_gene_segment,lnc_RNA,miRNA,mRNA,ncRNA,pseudogenic_transcript,rRNA,scRNA,snoRNA,snRNA,tRNA,unconfirmed_transcript'
-'protein_coding_gene'
-'protein_coding_gene,lincRNA_gene,lncRNA_gene'
-'lincRNA_gene,protein_coding_gene,pseudogene'
-'gene,lincRNA_gene,lncRNA_gene,pseudogene,J_gene_segment'
-'Transgenic_insertion'
-'contig,genomic_clone'
-'contig,tiling_path_clone'
-'DNA_binding_site,morpholino_oligo,nuclease_binding_site'
-'sequence_alteration'
-'sequence_alteration'
+#'sequence_alteration'
 )
 
 LABELS=(
 'Additional_Transcripts'
-'ZFIN_Genes_with_Antibody_Data'
-'ZFIN_Genes_with_Phenotype'
-'ZFIN_Genes_with_Expression'
-'ZFIN_Gene'
-'Transgenic_Insertion'
-'Complete_Assembly_Clones'
-'Assembly'
-'Knockdown_Reagent'
-'Zebrafish_Mutation_Project'
-'ZFIN_Features'
+#'Zebrafish_Mutation_Project'
 )
 
-parallel -j "33%" wget -q  http://zfin.org/downloads/{} 2>&1 ::: "${FILES[@]}"
+parallel -j "50%" wget -q  http://zfin.org/downloads/{} 2>&1 ::: "${FILES[@]}"
 
-parallel --link -j "33%"  bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff {1} --type {2} --trackLabel {3} ::: "${FILES[@]}" ::: "${TYPES[@]}" ::: "${LABELS[@]}"
+parallel --link -j "50%"  bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff {1} --type {2} --trackLabel {3} ::: "${FILES[@]}" ::: "${TYPES[@]}" ::: "${LABELS[@]}"
 
 #start track uploads while running the name indexer
 for label in "${LABELS[@]}"; do
