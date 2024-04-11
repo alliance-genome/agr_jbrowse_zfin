@@ -49,7 +49,6 @@
             "strandArrow" : true,
             "color" : "#6792ED"
          },
-         "fmtDetailField_Id" : "function(name) {return null;}",
          "fmtDetailField_Curie" : "function(name) {return null;}",
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
