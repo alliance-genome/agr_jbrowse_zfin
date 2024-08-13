@@ -32,8 +32,8 @@
              "action": "newWindow",
              "url": "function(track,f) {var geneid = f.get('gene_id');  return 'http://zfin.org/' + geneid;}"
          },
-         fmtDetailField_Id : function(name) {return null;},
-         fmtDetailField_Curie : function(name) {return null;},
+         "fmtDetailField_Id" : "function(name) {return null;}",
+         "fmtDetailField_Curie" : "function(name) {return null;}",
          "glyph" : "JBrowse/View/FeatureGlyph/Box",
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
@@ -51,7 +51,6 @@
          },
          "fmtDetailField_Id" : "function(name) {return null;}",
          "fmtDetailField_Curie" : "function(name) {return null;}",
-         "labelTranscripts" : false,
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
          "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/ZFIN_Gene/{refseq}/trackData.jsonz"
@@ -135,8 +134,8 @@
             "className" : "feature",
             "color" : "#FE0200"
          },
-         fmtDetailField_Id : function(name) {return null;},
-         fmtDetailField_Curie : function(name) {return null;},
+         "fmtDetailField_Id" : "function(name) {return null;}",
+         "fmtDetailField_Curie" : "function(name) {return null;}",
          "trackType" : "CanvasFeatures",
          "type" : "CanvasFeatures",
          "urlTemplate" : "https://s3.amazonaws.com/agrjbrowse/MOD-jbrowses/zfin/tracks/Additional_Transcripts/{refseq}/trackData.jsonz"
