@@ -67,6 +67,24 @@ LABELS=(
 'ZFIN_Features'
 )
 
+#process the few GRCZ12 gff files
+wget -q https://zfin.org/downloads/zfin_genes.grcz12.gff3
+wget -q https://zfin.org/downloads/zfin_refseq.grcz12.gff3.gz
+gzip -d zfin_refseq.grcz12.gff3.gz
+
+flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_genes.grcz12.gff3 --type protein_coding_gene,lincRNA_gene,lncRNA_gene  --trackLabel ZFIN_Gene --out data/GRCz12tu
+flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_refseq.grcz12.gff3 --type protein_coding_gene,lincRNA_gene,lncRNA_gene  --trackLabel RefSeq --out data/GRCz12tu
+
+
+AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp --recursive --content-encoding gzip --acl public-read data/GRCz12tu/tracks s3://agrjbrowse/MOD-jbrowses/zfin/GRCz12tu/tutracks
+
+bin/generate-names.pl --compress --out data/GRCZ12tu 2>&1
+
+AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp  --recursive --content-encoding gzip --acl public-read data/GRCz12tu/names s3://agrjbrowse/MOD-jbrowses/zfin/GRCz12tu/names
+
+AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp --acl public-read data/GRCz12tu/names/meta.json s3://agrjbrowse/MOD-jbrowses/zfin/GRCz12tu/names/
+
+# now the 11 assembly
 parallel -j "96%" wget -q  http://zfin.org/downloads/{} 2>&1 ::: "${FILES[@]}"
 
 parallel --link -j "96%"  bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff {1} --type {2} --trackLabel {3} ::: "${FILES[@]}" ::: "${TYPES[@]}" ::: "${LABELS[@]}"
