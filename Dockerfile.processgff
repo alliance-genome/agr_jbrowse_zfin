@@ -28,11 +28,13 @@ FROM gmod/jbrowse-gff-base:latest
 
 LABEL maintainer="scott@scottcain.net"
 
-RUN git clone --single-branch --branch main https://github.com/alliance-genome/agr_jbrowse_zfin.git
+RUN git clone --single-branch --branch server-dev https://github.com/alliance-genome/agr_jbrowse_zfin.git
 RUN git clone --single-branch --branch master https://github.com/alliance-genome/agr_jbrowse_config.git
 
 RUN cp /agr_jbrowse_zfin/simple-command.sh / && \
     cp /agr_jbrowse_zfin/parallel.sh / && \
+    mkdir -p /jbrowse/data/GRCz12tu/seq && \
+    cp /agr_jbrowse_zfin/jbrowse/data/GRCz12tu/seq/refSeqs.json /jbrowse/data/GRCz12tu/seq/ && \
     mkdir -p /jbrowse/data/seq && \
     cp /agr_jbrowse_zfin/jbrowse/data/GRCz11/seq/refSeqs.json /jbrowse/data/seq
 
