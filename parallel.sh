@@ -78,7 +78,7 @@ bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_refseq
 
 AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp --recursive --content-encoding gzip --acl public-read data/GRCz12tu/tracks s3://agrjbrowse/MOD-jbrowses/zfin/GRCz12tu/tracks
 
-bin/generate-names.pl --compress --out data/GRCZ12tu 2>&1
+bin/generate-names.pl --compress --out data/GRCz12tu 2>&1
 
 AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp  --recursive --content-encoding gzip --acl public-read data/GRCz12tu/names s3://agrjbrowse/MOD-jbrowses/zfin/GRCz12tu/names
 
