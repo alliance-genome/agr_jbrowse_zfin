@@ -76,11 +76,11 @@ bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_genes.
 bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_refseq.grcz12.gff3 --type gene,protein_coding_gene,lincRNA_gene,lncRNA_gene  --trackLabel RefSeq --out data/GRCz12tu
 
 
-AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp --recursive --content-encoding gzip --acl public-read data/GRCz12tu/tracks s3://agrjbrowse/MOD-jbrowses/zfin/GRCz12tu/tracks
+AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp --quiet --recursive --content-encoding gzip --acl public-read data/GRCz12tu/tracks s3://agrjbrowse/MOD-jbrowses/zfin/GRCz12tu/tracks
 
 bin/generate-names.pl --compress --out data/GRCz12tu 2>&1
 
-AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp  --recursive --content-encoding gzip --acl public-read data/GRCz12tu/names s3://agrjbrowse/MOD-jbrowses/zfin/GRCz12tu/names
+AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp  --quiet --recursive --content-encoding gzip --acl public-read data/GRCz12tu/names s3://agrjbrowse/MOD-jbrowses/zfin/GRCz12tu/names
 
 AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp --acl public-read data/GRCz12tu/names/meta.json s3://agrjbrowse/MOD-jbrowses/zfin/GRCz12tu/names/
 
