@@ -68,9 +68,10 @@ LABELS=(
 )
 
 #process the few GRCZ12 gff files
-wget -q https://zfin.org/downloads/zfin_genes.grcz12.gff3
+wget -q https://zfin.org/downloads/zfin_genes.grcz12.gff3.gz
 wget -q https://zfin.org/downloads/zfin_refseq.grcz12.gff3.gz
 gzip -d zfin_refseq.grcz12.gff3.gz
+gzip -d zfin_genes.grcz12.gff3.gz
 
 bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_genes.grcz12.gff3 --type gene,protein_coding_gene,lincRNA_gene,lncRNA_gene  --trackLabel ZFIN_Gene --out data/GRCz12tu
 bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_refseq.grcz12.gff3 --type gene,protein_coding_gene,lincRNA_gene,lncRNA_gene  --trackLabel RefSeq --out data/GRCz12tu
