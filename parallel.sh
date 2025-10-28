@@ -35,7 +35,7 @@ FILES=(
 'E_full_zfin_clone.gff3'
 'E_trim_zfin_clone.gff3'
 'E_zfin_knockdown_reagents.gff3'
-#'zfin_zmp.gff3'
+'zfin_zmp.gff3'
 'zfin_mutants.gff3'
 )
 
@@ -49,7 +49,7 @@ TYPES=(
 'contig,genomic_clone'
 'contig,tiling_path_clone'
 'DNA_binding_site,morpholino_oligo,nuclease_binding_site'
-#'sequence_alteration'
+'sequence_alteration'
 'sequence_alteration'
 )
 
@@ -63,7 +63,7 @@ LABELS=(
 'Complete_Assembly_Clones'
 'Assembly'
 'Knockdown_Reagent'
-#'Zebrafish_Mutation_Project'
+'Zebrafish_Mutation_Project'
 'ZFIN_Features'
 )
 
