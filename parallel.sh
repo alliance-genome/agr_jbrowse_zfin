@@ -70,12 +70,15 @@ LABELS=(
 #process the few GRCZ12 gff files
 wget -q https://zfin.org/downloads/zfin_genes.grcz12.gff3.gz
 wget -q https://zfin.org/downloads/zfin_refseq.grcz12.gff3.gz
+wget -q https://zfin.org/downloads/zfin_mutants_grcz12tu.gff3
+wget -q https://zfin.org/downloads/zfin_zmp_grcz10.gff3
 gzip -d zfin_refseq.grcz12.gff3.gz
 gzip -d zfin_genes.grcz12.gff3.gz
 
 bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_genes.grcz12.gff3 --type gene,protein_coding_gene,lincRNA_gene,lncRNA_gene  --trackLabel ZFIN_Gene --out data/GRCz12tu
 bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_refseq.grcz12.gff3 --type gene,protein_coding_gene,lincRNA_gene,lncRNA_gene  --trackLabel RefSeq --out data/GRCz12tu
-
+bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_mutants_grcz12tu.gff3  --type sequence_alteration --trackLabel ZFIN_Features --out data/GRCz12tu
+bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_zmp_grcz10.gff3 --type sequence_alteration --trackLabel Zebrafish_Mutation_Project --out data/GRCz12tu
 
 AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp --quiet --recursive --content-encoding gzip --acl public-read data/GRCz12tu/tracks s3://agrjbrowse/MOD-jbrowses/zfin/GRCz12tu/tracks
 
