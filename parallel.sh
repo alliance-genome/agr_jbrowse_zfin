@@ -71,7 +71,7 @@ LABELS=(
 wget -q https://zfin.org/downloads/zfin_genes.grcz12.gff3.gz
 wget -q https://zfin.org/downloads/zfin_refseq.grcz12.gff3.gz
 wget -q https://zfin.org/downloads/zfin_mutants_grcz12tu.gff3
-wget -q https://zfin.org/downloads/zfin_zmp_grcz10.gff3
+wget -q https://zfin.org/downloads/zfin_zmp_grcz12tu.gff3
 gzip -d zfin_refseq.grcz12.gff3.gz
 gzip -d zfin_genes.grcz12.gff3.gz
 
