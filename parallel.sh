@@ -35,7 +35,7 @@ FILES=(
 'E_full_zfin_clone.gff3'
 'E_trim_zfin_clone.gff3'
 'E_zfin_knockdown_reagents.gff3'
-#'zfin_zmp.gff3'
+'zfin_zmp.gff3'
 'zfin_mutants.gff3'
 )
 
@@ -49,7 +49,7 @@ TYPES=(
 'contig,genomic_clone'
 'contig,tiling_path_clone'
 'DNA_binding_site,morpholino_oligo,nuclease_binding_site'
-#'sequence_alteration'
+'sequence_alteration'
 'sequence_alteration'
 )
 
@@ -63,35 +63,15 @@ LABELS=(
 'Complete_Assembly_Clones'
 'Assembly'
 'Knockdown_Reagent'
-#'Zebrafish_Mutation_Project'
+'Zebrafish_Mutation_Project'
 'ZFIN_Features'
 )
 
 #process the few GRCZ12 gff files
-wget -q https://zfin.org/downloads/zfin_genes.grcz12.gff3.gz
-wget -q https://zfin.org/downloads/zfin_refseq.grcz12.gff3.gz
-wget -q https://zfin.org/downloads/zfin_mutants_grcz12tu.gff3
-wget -q https://zfin.org/downloads/zfin_zmp_grcz12tu.gff3
-gzip -d zfin_refseq.grcz12.gff3.gz
-gzip -d zfin_genes.grcz12.gff3.gz
-
-bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_genes.grcz12.gff3 --type gene,protein_coding_gene,lincRNA_gene,lncRNA_gene  --trackLabel ZFIN_Gene --out data/GRCz12tu
-bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_refseq.grcz12.gff3 --type gene,protein_coding_gene,lincRNA_gene,lncRNA_gene  --trackLabel RefSeq --out data/GRCz12tu
-bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_mutants_grcz12tu.gff3  --type sequence_alteration --trackLabel ZFIN_Features --out data/GRCz12tu
-bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_zmp_grcz10.gff3 --type sequence_alteration --trackLabel Zebrafish_Mutation_Project --out data/GRCz12tu
-
-AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp --quiet --recursive --content-encoding gzip --acl public-read data/GRCz12tu/tracks s3://agrjbrowse/MOD-jbrowses/zfin/GRCz12tu/tracks
-
-bin/generate-names.pl --compress --out data/GRCz12tu 2>&1
-
-AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp  --quiet --recursive --content-encoding gzip --acl public-read data/GRCz12tu/names s3://agrjbrowse/MOD-jbrowses/zfin/GRCz12tu/names
-
-AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp --acl public-read data/GRCz12tu/names/meta.json s3://agrjbrowse/MOD-jbrowses/zfin/GRCz12tu/names/
-
 # now the 11 assembly
-parallel -j "96%" wget -q  http://zfin.org/downloads/{} 2>&1 ::: "${FILES[@]}"
+parallel -j "50%" wget -q  http://zfin.org/downloads/{} 2>&1 ::: "${FILES[@]}"
 
-parallel --link -j "96%"  bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff {1} --type {2} --trackLabel {3} ::: "${FILES[@]}" ::: "${TYPES[@]}" ::: "${LABELS[@]}"
+parallel --link -j "50%"  bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff {1} --type {2} --trackLabel {3} ::: "${FILES[@]}" ::: "${TYPES[@]}" ::: "${LABELS[@]}"
 
 #start track uploads while running the name indexer
 for label in "${LABELS[@]}"; do
