@@ -75,8 +75,8 @@ wget -q https://zfin.org/downloads/zfin_zmp_grcz12tu.gff3
 gzip -d zfin_refseq.grcz12.gff3.gz
 gzip -d zfin_genes.grcz12.gff3.gz
 
-bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_genes.grcz12.gff3 --type gene,protein_coding_gene,lincRNA_gene,lncRNA_gene  --trackLabel ZFIN_Gene --out data/GRCz12tu
-bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_refseq.grcz12.gff3 --type gene,protein_coding_gene,lincRNA_gene,lncRNA_gene  --trackLabel RefSeq --out data/GRCz12tu
+bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_genes.grcz12.gff3 --type gene,protein_coding_gene,lincRNA_gene,lncRNA_gene,pseudogene  --trackLabel ZFIN_Gene --out data/GRCz12tu
+bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_refseq.grcz12.gff3 --type gene,protein_coding_gene,lincRNA_gene,lncRNA_gene,pseudogene  --trackLabel RefSeq --out data/GRCz12tu
 bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_mutants_grcz12tu.gff3  --type sequence_alteration --trackLabel ZFIN_Features --out data/GRCz12tu
 bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_zmp_grcz12tu.gff3 --type sequence_alteration --trackLabel Zebrafish_Mutation_Project --out data/GRCz12tu
 
