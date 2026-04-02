@@ -80,7 +80,7 @@ gzip -d zfin_genes.grcz12.gff3.gz
 
 cat E_zfin_knockdown_reagents_grcz12tu.gff3 E_zfin_morpholino_grcz12tu.gff3 E_zfin_talen_grcz12tu.gff3 > zfin_knockdown_reagents.gff3
 
-bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_knockdown_reagents.gff3 -type DNA_binding_site, morpholino_oligo,nuclease_binding_site --trackLabel Knockdown Reagents --out data/GRCz12tu
+bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_knockdown_reagents.gff3 -type DNA_binding_site, morpholino_oligo,nuclease_binding_site --trackLabel Knockdown_Reagents --out data/GRCz12tu
 
 bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_genes.grcz12.gff3 --type gene,protein_coding_gene,lincRNA_gene,lncRNA_gene,pseudogene  --trackLabel ZFIN_Gene --out data/GRCz12tu
 bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_refseq.grcz12.gff3 --type gene,protein_coding_gene,lincRNA_gene,lncRNA_gene,pseudogene  --trackLabel RefSeq --out data/GRCz12tu
