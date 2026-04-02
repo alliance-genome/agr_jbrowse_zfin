@@ -82,7 +82,7 @@ cat E_zfin_knockdown_reagents_grcz12tu.gff3  > zfin_knockdown_reagents.gff3
 tail -n +2 E_zfin_morpholino_grcz12tu.gff3  >> zfin_knockdown_reagents.gff3
 tail -n +2 E_zfin_talen_grcz12tu.gff3       >> zfin_knockdown_reagents.gff3
 
-bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_knockdown_reagents.gff3 -type DNA_binding_site, morpholino_oligo,nuclease_binding_site --trackLabel Knockdown_Reagents --out data/GRCz12tu
+bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_knockdown_reagents.gff3 -type DNA_binding_site, morpholino_oligo,nuclease_binding_site --trackLabel Knockdown_Reagent --out data/GRCz12tu
 
 bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_genes.grcz12.gff3 --type gene,protein_coding_gene,lincRNA_gene,lncRNA_gene,pseudogene  --trackLabel ZFIN_Gene --out data/GRCz12tu
 bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_refseq.grcz12.gff3 --type gene,protein_coding_gene,lincRNA_gene,lncRNA_gene,pseudogene  --trackLabel RefSeq --out data/GRCz12tu
@@ -90,6 +90,8 @@ bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_mutant
 bin/flatfile-to-json.pl --trackType CanvasFeatures  --compress --gff zfin_zmp_grcz12tu.gff3 --type sequence_alteration --trackLabel Zebrafish_Mutation_Project --out data/GRCz12tu
 
 AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp --quiet --recursive --content-encoding gzip --acl public-read data/GRCz12tu/tracks s3://agrjbrowse/MOD-jbrowses/zfin/GRCz12tu/tracks
+
+AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY aws s3 cp --quiet --acl public-read zfin_knockdown_reagents.gff3 s3://agrjbrowse/MOD-jbrowses/zfin/GRCz12tu/tracks/
 
 bin/generate-names.pl --compress --out data/GRCz12tu 2>&1
 
